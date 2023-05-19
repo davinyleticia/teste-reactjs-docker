@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  app-prod:
+    container_name: dockerized-reactjs-app-prod
+    volumes:
+      - ./certs:/etc/nginx/certs
+    build:
+      context: .
+      dockerfile:  docker/Dockerfile.production
+    ports:
+      - '80:80'
+      - '443:443'

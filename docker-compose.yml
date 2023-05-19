@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+    app:
+        container_name: reactjs-app
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.development
+        volumes:
+            - '.:/app'
+        ports:
+            - '3000:3000'
+        environment:
+            - NODE_ENV=development
