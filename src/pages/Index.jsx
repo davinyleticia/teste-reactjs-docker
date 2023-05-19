@@ -1,14 +1,24 @@
 import React from 'react';
 import NotificationBoard from '../ui/partials/NotificationBoard/NotificationBoard';
-import { Container, DivisionLine, Title } from '../ui/styles/home.styled';
+import {
+  Container,
+  DivisionLine,
+  Fragment,
+  Title,
+} from '../ui/styles/home.styled';
 
 function Home() {
+
   return (
-    <Container>
-      <Title>Notificações</Title>
-      <DivisionLine/>
-      <NotificationBoard />
-    </Container>
+    <React.Fragment>
+      <Container>
+        <Title>Notificações</Title>
+        <DivisionLine />
+        <Fragment>
+          <NotificationBoard />
+        </Fragment>
+      </Container>
+    </React.Fragment>
   );
 }
 

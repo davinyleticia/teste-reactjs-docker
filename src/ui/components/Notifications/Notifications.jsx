@@ -13,16 +13,16 @@ import {
 function Notifications({
   setIsVisible,
   HanldenViewsAll,
-  dataNotifications = [],
+  dataNotifications = [{}],
 }) {
   return (
     <Container>
       {dataNotifications.length > 0 ? (
         <React.Fragment>
           <Fragment>
-            {dataNotifications.map((key, notification) => {
-              <Messages key={key} title={notification.title} data={notification.data} />;
-            })}
+            {dataNotifications.map((key, notification) => (
+              <Messages key={key} title={notification.title} data={notification.data} />
+            ))}
             <DivisionLine />
             <ContentViewsAll>
               <BtnViewsAll onClick={HanldenViewsAll}>VER TODOS</BtnViewsAll>

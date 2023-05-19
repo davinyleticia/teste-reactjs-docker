@@ -1,10 +1,13 @@
 import React from 'react';
+import { ModalContextProvider } from './data/contexts/useModal';
 
 import RouterViews from './data/routes/router';
 
 function App() {
-  return(
-       <RouterViews />
+  return (
+    <ModalContextProvider>
+      <RouterViews />
+    </ModalContextProvider>
   );
 }
 
