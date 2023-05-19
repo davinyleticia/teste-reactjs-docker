@@ -1,6 +1,8 @@
-import React, {useContext} from 'react';
-import MessagesIco from '../Ico/Messages';
+import React, { useContext } from 'react';
 import { contextModal } from '../../../data/contexts/useModal';
+import { contextModalExitMessages } from '../../../data/contexts/useModalExitMessages';
+import MessagesIco from '../Ico/Messages';
+import ModalViewsNotifications from '../ModalViewsNotifications/ModalViewsNotifications';
 import {
   BtnViewsAll,
   Close,
@@ -16,9 +18,11 @@ import {
 } from './Notifications.styled';
 
 function NotificationsCard({ setIsVisible, title, data, isActive }) {
+  const [modal, handleSetIsModal] = useContext(contextModal);
+  const [modalExitMessages, handleSetModalExitMessages] = useContext(
+    contextModalExitMessages,
+  );
 
-
-  const [setIsModal] = useContext(contextModal);
   return (
     <Container active={isActive}>
       <Content>
@@ -28,7 +32,9 @@ function NotificationsCard({ setIsVisible, title, data, isActive }) {
             <Title>Proz | Comunicado - Alteração de número do whatsapp</Title>
             <Data>31/03/2022 - 19:33</Data>
           </ContentInfo>
-          <Close setIsVisible={setIsVisible} />
+          <Close
+            setIsVisible={() => handleSetModalExitMessages({ isModal: true, id: 1 })}
+          />
         </Fragment>
         <Description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -36,7 +42,9 @@ function NotificationsCard({ setIsVisible, title, data, isActive }) {
         </Description>
         <DivisionLine />
         <ContentViewsAll>
-          <BtnViewsAll onClick={() => setIsModal(true)}>
+          <BtnViewsAll
+            onClick={() => handleSetIsModal({ isModal: true, id: 1 })}
+          >
             LER MENSAGEM
           </BtnViewsAll>
         </ContentViewsAll>

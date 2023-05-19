@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { contextModal } from '../../../data/contexts/useModal';
+import { Blackrop } from '../../styles/home.styled';
 import MessagesIco from '../Ico/Messages';
 import {
-    Blackrop,
   BtnViewsAll,
   Close,
   Container,
@@ -22,9 +22,7 @@ function ModalViewsNotifications({
   descriptonsAll,
   closeMessages,
 }) {
-
-  const [setIsModal] = useContext(contextModal);
-
+  const [modal, handleSetIsModal] = useContext(contextModal);
 
   return (
     <Blackrop>
@@ -36,7 +34,7 @@ function ModalViewsNotifications({
               <Title>Proz | Comunicado - Alteração de número do whatsapp</Title>
               <Data>31/03/2022 - 19:33</Data>
             </ContentInfo>
-            <Close setIsVisible={closeMessages} />
+            <Close setIsVisible={handleSetIsModal} />
           </Fragment>
           <Description>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -44,7 +42,9 @@ function ModalViewsNotifications({
           </Description>
           <DivisionLine />
           <ContentViewsAll>
-            <BtnViewsAll onClick={()=>setIsModal(false)}>FECHAR</BtnViewsAll>
+            <BtnViewsAll onClick={() => handleSetIsModal({isModal: false, id: 1})}>
+              FECHAR
+            </BtnViewsAll>
           </ContentViewsAll>
         </Content>
       </Container>

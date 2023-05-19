@@ -3,10 +3,12 @@ import CloseIco from '../Ico/Close';
 
 export const Container = styled.div`
   background: #ffffff;
-  border-bottom: ${(props) => (props.active ? '2px solid #FF7F00' : 'none')};
+  border-bottom: ${props => (props.active ? '2px solid #FF7F00' : 'none')};
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12);
   border-radius: 8px;
+  width: 424px;
+  max-height: 467px;
 `;
 
 export const Fragment = styled.div`
@@ -32,6 +34,7 @@ export const BtnViewsAll = styled.button`
 export const ContentViewsAll = styled.div`
   display: flex;
   justify-content: center;
+  padding: 1rem 0;
 `;
 
 export const DivisionLine = styled.div`
@@ -41,6 +44,7 @@ export const DivisionLine = styled.div`
 
 export const Content = styled.div`
   padding: 1rem !important;
+  height: 100%;
 `;
 
 export const ContentInfo = styled.div`
@@ -57,19 +61,11 @@ export const Data = styled.div`
   margin: 0 !important;
 `;
 
-export const Description = styled.div``;
+export const Description = styled.div`
+  padding: 1rem 0;
+
+`;
 
 export const Close = styled(CloseIco)`
   position: absolute;
-`;
-
-export const Blackrop = styled.div`
-    position: absolute;
-    weight: 100%;
-    height: 100%;
-    top: 0
-    left: 0;
-    z-index: 1000;
-    background: rgb(0,0,0,0.8);
-
 `;

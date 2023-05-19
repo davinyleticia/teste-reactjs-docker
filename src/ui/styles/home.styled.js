@@ -26,3 +26,17 @@ export const DivisionLine = styled.hr`
 export const Fragment = styled.div`
   weight: 0 auto;
 `;
+
+
+export const Blackrop = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgb(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

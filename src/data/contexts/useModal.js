@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 
 export const contextModal = React.createContext()
 
 
 
 export const ModalContextProvider = props => {
-    const [isModal, setIsModal] = useState(false);
+  const initial = {
+    'isModal': false,
+    'id': null,
+  }
+    const [modal, setIsModal] = useState(initial);
   
-    const handleSetIsModal = value => {
+    const handleSetIsModal = useCallback((value)=> {
       setIsModal(value);
-    };
-    
+    },[setIsModal]);
+
     return (
-      <contextModal.Provider value={[isModal, handleSetIsModal]}>
+      <contextModal.Provider value={[modal, handleSetIsModal]}>
         {props.children}
       </contextModal.Provider>
     );
