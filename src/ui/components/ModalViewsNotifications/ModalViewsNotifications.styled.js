@@ -20,10 +20,11 @@ export const Fragment = styled.div`
 
 export const BtnViewsAll = styled.button`
   color: #593493;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.2rem 3rem !important;
+  padding: 1rem 3rem !important;
   justify-content: center;
   border-radius: 0.5rem;
   border: solid 1px #593493;
@@ -63,9 +64,10 @@ export const Data = styled.div`
 
 export const Description = styled.div`
   padding: 1rem 0;
-
 `;
 
 export const Close = styled(CloseIco)`
-  position: absolute;
+  margin-inline-start: auto !important;
+  width: 100%;
+
 `;

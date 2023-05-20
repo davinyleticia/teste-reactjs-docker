@@ -3,17 +3,12 @@
 
 
 import React, { useReducer, createContext } from "react";
-import {reducer} from "../services/bobs/reducer"
+import { reducer } from "../reduces/notifications";
 
 export const contextAPI = createContext();
 
-const initialState = {
-    token: {},
-    school: [],
-    informations: [],
-    user:[],
-    loading: false,
-    mgsErro: null,
+export const initialState = {
+    notifications: []
   };
 
 export const APIContextProvider = props => {

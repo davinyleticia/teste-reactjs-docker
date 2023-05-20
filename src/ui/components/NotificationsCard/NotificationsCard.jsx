@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { contextModal } from '../../../data/contexts/useModal';
 import { contextModalExitMessages } from '../../../data/contexts/useModalExitMessages';
 import MessagesIco from '../Ico/Messages';
-import ModalViewsNotifications from '../ModalViewsNotifications/ModalViewsNotifications';
 import {
   BtnViewsAll,
   Close,
@@ -14,36 +13,52 @@ import {
   Description,
   DivisionLine,
   Fragment,
+  IcoSvg,
   Title,
 } from './Notifications.styled';
 
-function NotificationsCard({ setIsVisible, title, data, isActive }) {
-  const [modal, handleSetIsModal] = useContext(contextModal);
-  const [modalExitMessages, handleSetModalExitMessages] = useContext(
-    contextModalExitMessages,
-  );
+function NotificationsCard({
+  setIsVisible,
+  title,
+  date,
+  isActive,
+  description,
+  intro,
+  id,
+}) {
+  const [, handleSetIsModal] = useContext(contextModal);
+  const [, handleSetModalExitMessages] = useContext(contextModalExitMessages);
 
   return (
     <Container active={isActive}>
       <Content>
         <Fragment>
-          <MessagesIco />
+          <IcoSvg>
+            <MessagesIco />
+          </IcoSvg>
           <ContentInfo>
-            <Title>Proz | Comunicado - Alteração de número do whatsapp</Title>
-            <Data>31/03/2022 - 19:33</Data>
+            <Title>{title}</Title>
+            <Data>3{date}</Data>
           </ContentInfo>
           <Close
-            setIsVisible={() => handleSetModalExitMessages({ isModal: true, id: 1 })}
+            setIsVisible={() =>
+              handleSetModalExitMessages({ isModal: true, id: id })
+            }
           />
         </Fragment>
-        <Description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Description>
+        <Description>{intro} ...</Description>
         <DivisionLine />
         <ContentViewsAll>
           <BtnViewsAll
-            onClick={() => handleSetIsModal({ isModal: true, id: 1 })}
+            onClick={() =>
+              handleSetIsModal({
+                isModal: true,
+                id: id,
+                title: title,
+                date: date,
+                description: description,
+              })
+            }
           >
             LER MENSAGEM
           </BtnViewsAll>

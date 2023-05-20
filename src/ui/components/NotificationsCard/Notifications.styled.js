@@ -13,11 +13,13 @@ export const Fragment = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  text-align: start;
   padding: 0 !important;
 `;
 
 export const BtnViewsAll = styled.button`
   color: #593493;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,11 +42,12 @@ export const DivisionLine = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 1rem !important;
+  padding: .5rem !important;
 `;
 
 export const ContentInfo = styled.div`
   padding-left: 1rem !important;
+  margin: 0 !important;
 `;
 
 export const Title = styled.div`
@@ -61,4 +64,10 @@ export const Description = styled.div``;
 
 export const Close = styled(CloseIco)`
   position: absolute;
+`;
+
+
+export const IcoSvg = styled.div`
+margin: 0;
+padding: 0;
 `;

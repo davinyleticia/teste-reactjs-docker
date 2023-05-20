@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import Alert from '../../components/Alert/Alert';
 import Avatar from '../../components/Avatar/Avatar';
 import LogoIco from '../../components/Ico/Logo';
@@ -14,8 +14,18 @@ import {
   Name,
   Proficiency,
 } from './header.styled';
+import { contextAPI } from '../../../data/contexts/useApiNotifications';
+import { fetchNotifications } from '../../../data/actions/notifications';
 
 function Header() {
+  const [api, dispatch] = useContext(contextAPI);
+
+  useEffect(() => {
+    fetchNotifications(dispatch);
+  }, [fetchNotifications, dispatch]);
+
+  console.log(api)
+
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
@@ -54,6 +64,7 @@ function Header() {
         <Notifications
           setIsVisible={setIsVisible}
           HanldenViewsAll={HanldenViewsAll}
+          dataNotifications={api.notifications.posts}
         />
       )}
     </React.Fragment>

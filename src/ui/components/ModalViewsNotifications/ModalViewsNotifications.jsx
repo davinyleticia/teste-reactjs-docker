@@ -31,18 +31,17 @@ function ModalViewsNotifications({
           <Fragment>
             <MessagesIco />
             <ContentInfo>
-              <Title>Proz | Comunicado - Alteração de número do whatsapp</Title>
-              <Data>31/03/2022 - 19:33</Data>
+              <Title>{modal.title}</Title>
+              <Data>{modal.date}</Data>
             </ContentInfo>
-            <Close setIsVisible={handleSetIsModal} />
+            <React.Fragment>
+              <Close setIsVisible={handleSetIsModal} />
+            </React.Fragment>
           </Fragment>
-          <Description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Description>
+          <Description>{modal.description}</Description>
           <DivisionLine />
           <ContentViewsAll>
-            <BtnViewsAll onClick={() => handleSetIsModal({isModal: false, id: 1})}>
+            <BtnViewsAll onClick={() => handleSetIsModal({ isModal: false })}>
               FECHAR
             </BtnViewsAll>
           </ContentViewsAll>

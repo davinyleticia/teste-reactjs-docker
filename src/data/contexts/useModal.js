@@ -8,6 +8,9 @@ export const ModalContextProvider = props => {
   const initial = {
     'isModal': false,
     'id': null,
+    'title': null,
+    'date': null,
+    'description': null,
   }
     const [modal, setIsModal] = useState(initial);
   

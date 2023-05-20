@@ -22,6 +22,7 @@ export const Fragment = styled.div`
 
 export const BtnViewsAll = styled.button`
   color: #593493;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;

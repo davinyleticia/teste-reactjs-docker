@@ -3,13 +3,13 @@ import MessagesIco from '../Ico/Messages';
 import { Container, ContentInfo, Data, Title } from './messages.styled';
 
 
-function Messages() {
+function Messages({title, data}) {
   return (
     <Container>
       <MessagesIco />
       <ContentInfo>
-        <Title>Proz | Comunicado - Alteração de número do whatsapp</Title>
-        <Data>31/03/2022 - 19:33</Data>
+        <Title>{title}</Title>
+        <Data>{data}</Data>
       </ContentInfo>
     </Container>
   );
