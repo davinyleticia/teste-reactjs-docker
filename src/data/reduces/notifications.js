@@ -9,26 +9,21 @@ export const reducer = (state, action) => {
       return {
         ...state,
         notifications: action.payload,
-        actionDelete: false,
       };
 
-      case 'DELETE_NOTIFICATIONS_SUCCESS':
-        const deletedIndex = action.id;
-    
-        // Cria uma nova array excluindo o elemento no índice deletedIndex
-        const updatedPosts = [
-            ...state.notifications.posts.slice(1, deletedIndex),
-            ...state.notifications.posts.slice(deletedIndex + 1)
-        ];
-    
-        return {
-            ...state,
-            notifications: {
-                ...state.notifications,
-                posts: updatedPosts,
-            },
-            actionDelete: false,
-        };
+    case 'DELETE_NOTIFICATIONS_SUCCESS':
+      const deletedIndex = action.id;
+
+      // Cria uma nova array excluindo o elemento no índice deletedIndex
+      const updatedPosts = [
+        ...state.notifications.slice(1, deletedIndex),
+        ...state.notifications.slice(deletedIndex + 1),
+      ];
+
+      return {
+        ...state,
+        notifications: updatedPosts,
+      };
 
     default:
       throw new Error();

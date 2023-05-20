@@ -15,6 +15,7 @@ export const Fragment = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: space-between;
   padding: 0 !important;
 `;
 

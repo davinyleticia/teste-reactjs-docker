@@ -18,9 +18,8 @@ import {
 } from './Notifications.styled';
 
 function NotificationsCard({
-  setIsVisible,
+  dateString,
   title,
-  date,
   isActive,
   description,
   intro,
@@ -38,7 +37,7 @@ function NotificationsCard({
           </IcoSvg>
           <ContentInfo>
             <Title>{title}</Title>
-            <Data>3{date}</Data>
+            <Data>{dateString}</Data>
           </ContentInfo>
           <Close
             setIsVisible={() =>
@@ -55,7 +54,7 @@ function NotificationsCard({
                 isModal: true,
                 id: id,
                 title: title,
-                date: date,
+                date: dateString,
                 description: description,
               })
             }

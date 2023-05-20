@@ -6,33 +6,42 @@ import NotFoundNotifications from '../../components/NotFoundNotifications/NotFou
 import NotificationsCard from '../../components/NotificationsCard/NotificationsCard';
 import { Cads } from './Notifications.styled';
 
-function NotificationBoard({
-  arrayCardNotifications = [
-    { title: 1, data: 1 },
-    { title: 1, data: 1 },
-  ],
-}) {
+function NotificationBoard() {
   const [api, dispatch] = useContext(contextAPI);
 
+  let dataAtual = new Date();
+  let mes = String(dataAtual.getMonth() + 1).padStart(2, '0');
+
+  let dataFormatada = '' + mes;
+  let data = parseInt(dataFormatada);
 
   useEffect(() => {
     fetchNotifications(dispatch);
   }, [fetchNotifications, dispatch]);
 
+  console.log(data);
+
   return (
     <React.Fragment>
-      {api.notifications.posts?.length > 0 ? (
+      {api?.notifications?.length > 0 ? (
         <Cads>
-          {api.notifications.posts?.map((elem, index) => (
-            <NotificationsCard
-              key={index}
-              title={elem.title.substring(0, 10)}
-              date={'1/03/2022 - 19:33'}
-              description={elem.body}
-              intro={elem.body.substring(0, 70)}
-              id={elem.id}
-            />
-          ))}
+          {api?.notifications
+            .slice()
+            .sort((a, b) => new Date(b.mes) - new Date(a.mes))
+            .map((elem, index) => (
+              <>
+                <NotificationsCard
+                  key={index}
+                  title={elem.title.substring(0, 10)}
+                  date={elem.date}
+                  description={elem.body}
+                  intro={elem.body.substring(0, 70)}
+                  id={elem.id}
+                  isActive={elem.mes > data ? true : null}
+                  dateString={elem.dateString}
+                />
+              </>
+            ))}
         </Cads>
       ) : (
         <NotFoundNotifications />

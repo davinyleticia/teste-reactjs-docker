@@ -24,8 +24,6 @@ function Header() {
     fetchNotifications(dispatch);
   }, [fetchNotifications, dispatch]);
 
-  console.log(api)
-
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
@@ -64,7 +62,7 @@ function Header() {
         <Notifications
           setIsVisible={setIsVisible}
           HanldenViewsAll={HanldenViewsAll}
-          dataNotifications={api.notifications.posts}
+          dataNotifications={api.notifications}
         />
       )}
     </React.Fragment>

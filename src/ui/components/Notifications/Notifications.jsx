@@ -1,4 +1,5 @@
 import React from 'react';
+import { stringData } from '../../../data/ultils/stringData';
 import CloseIco from '../Ico/Close';
 import Messages from '../Messages/Messages';
 import NotMessages from '../NotMessages/NotMessages';
@@ -21,7 +22,7 @@ function Notifications({
         <React.Fragment>
           <Fragment>
             {dataNotifications?.slice(0, 5).map((notification, key) => (
-              <Messages key={key} title={notification.title} data={'1/03/2022 - 19:33'} />
+              <Messages key={key} title={notification.title} data={notification.dateString} />
             ))}
             <DivisionLine />
             <ContentViewsAll>
