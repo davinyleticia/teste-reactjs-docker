@@ -17,9 +17,12 @@ function Notifications({
   dataNotifications,
 }) {
 
+
+  console.log("fff", dataNotifications)
+
   return (
     <Container>
-      {dataNotifications.length > 0 ? (
+      {dataNotifications?.length > 0 ? (
         <React.Fragment>
           <Fragment>
             {dataNotifications.map((notification, key) => (

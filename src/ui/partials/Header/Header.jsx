@@ -28,6 +28,8 @@ function Header() {
   }, [fetchNotifications, dispatch]);
 
   const [isVisible, setIsVisible] = useState(false);
+  const [dataNotifications, setDataNotifications] = useState([]);
+  const [allRead, setAllRead] = useState();
 
   const navigate = useNavigate();
 
@@ -53,6 +55,19 @@ function Header() {
     [fetchIsRead, dispatch],
   );
 
+  useEffect(() => {
+    setDataNotifications(
+      api?.notifications?.filter(elem => elem.isRead === false).slice(0, 5),
+    );
+  }, [api]);
+
+  useEffect(() => {
+    setAllRead(
+      api?.notifications?.every(notification => notification.isRead === true),
+    );
+  }, [api]);
+  
+  console.log(allRead)
   return (
     <React.Fragment>
       <Container>
@@ -61,7 +76,10 @@ function Header() {
           <LogoIco />
         </ContentLeft>
         <ContentRight>
-          <Alert isAlert={true} ShowNotifications={hanldenShowNotifications} />
+          <Alert
+            isAlert={allRead}
+            ShowNotifications={hanldenShowNotifications}
+          />
           <Avatar imgUrl="https://daviny.dev/images/logo.png" label="Avatar" />
           <Info>
             <Name>João da Silva</Name>
@@ -73,7 +91,7 @@ function Header() {
         <Notifications
           hanldenIsRead={hanldenIsRead}
           HanldenViewsAll={HanldenViewsAll}
-          dataNotifications={() => api.notifications?.filter(elem => elem.isRead === false).slice(0, 5)}
+          dataNotifications={dataNotifications}
         />
       )}
     </React.Fragment>

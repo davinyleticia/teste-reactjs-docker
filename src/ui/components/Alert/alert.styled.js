@@ -14,3 +14,11 @@ export const Signal = styled.div`
   border-radius: 50%;
   margin: .5rem;
 `;
+
+export const SignalTransparent = styled.div`
+  background: transparent;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: .5rem;
+`;
