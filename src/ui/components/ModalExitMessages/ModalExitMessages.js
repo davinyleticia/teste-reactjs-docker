@@ -13,6 +13,15 @@ import {
   Title,
 } from './ModalExitMessages.styled';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const notify = () =>
+  toast.success('Success Notification !', {
+    position: toast.POSITION.TOP_CENTER,
+  });
+
+  
 function ModalExitMessages() {
   const [modalExitMessages, handleSetModalExitMessages] = useContext(
     contextModalExitMessages,
@@ -20,7 +29,9 @@ function ModalExitMessages() {
   const [api, dispatch] = useContext(contextAPI);
 
   const handleExitMessages = useCallback(() => {
+    notify();
     deleteNofitication(modalExitMessages.id, dispatch);
+
     handleSetModalExitMessages({ isModal: false });
   }, [dispatch, deleteNofitication, handleSetModalExitMessages]);
 

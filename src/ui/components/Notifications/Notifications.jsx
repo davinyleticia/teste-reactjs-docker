@@ -12,16 +12,17 @@ import {
 } from './notifications.styled';
 
 function Notifications({
-  setIsVisible,
+  hanldenIsRead,
   HanldenViewsAll,
   dataNotifications,
 }) {
+
   return (
     <Container>
       {dataNotifications.length > 0 ? (
         <React.Fragment>
           <Fragment>
-            {dataNotifications?.slice(0, 5).map((notification, key) => (
+            {dataNotifications.map((notification, key) => (
               <Messages key={key} title={notification.title} data={notification.dateString} />
             ))}
             <DivisionLine />
@@ -29,7 +30,7 @@ function Notifications({
               <BtnViewsAll onClick={HanldenViewsAll}>VER TODOS</BtnViewsAll>
             </ContentViewsAll>
           </Fragment>
-          <CloseIco setIsVisible={setIsVisible} />
+          <CloseIco setIsVisible={(bool) =>  hanldenIsRead(dataNotifications, bool)} />
         </React.Fragment>
       ) : (
         <Fragment>

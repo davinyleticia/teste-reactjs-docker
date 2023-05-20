@@ -15,7 +15,10 @@ import {
   Proficiency,
 } from './header.styled';
 import { contextAPI } from '../../../data/contexts/useApiNotifications';
-import { fetchNotifications } from '../../../data/actions/notifications';
+import {
+  fetchIsRead,
+  fetchNotifications,
+} from '../../../data/actions/notifications';
 
 function Header() {
   const [api, dispatch] = useContext(contextAPI);
@@ -25,6 +28,7 @@ function Header() {
   }, [fetchNotifications, dispatch]);
 
   const [isVisible, setIsVisible] = useState(false);
+
   const navigate = useNavigate();
 
   const hanldenShowNotifications = useCallback(() => {
@@ -41,6 +45,13 @@ function Header() {
     setIsVisible(false);
     navigate('/notifications');
   }, [navigate]);
+
+  const hanldenIsRead = useCallback(
+    (array, bool) => {
+      fetchIsRead(dispatch, array, bool);
+    },
+    [fetchIsRead, dispatch],
+  );
 
   return (
     <React.Fragment>
@@ -60,9 +71,9 @@ function Header() {
       </Container>
       {isVisible && (
         <Notifications
-          setIsVisible={setIsVisible}
+          hanldenIsRead={hanldenIsRead}
           HanldenViewsAll={HanldenViewsAll}
-          dataNotifications={api.notifications}
+          dataNotifications={() => api.notifications?.filter(elem => elem.isRead === false).slice(0, 5)}
         />
       )}
     </React.Fragment>

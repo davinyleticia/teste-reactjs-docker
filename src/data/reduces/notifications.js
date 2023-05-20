@@ -12,17 +12,48 @@ export const reducer = (state, action) => {
       };
 
     case 'DELETE_NOTIFICATIONS_SUCCESS':
-      const deletedIndex = action.id;
+      const deletedId = action.id;
 
-      // Cria uma nova array excluindo o elemento no índice deletedIndex
-      const updatedPosts = [
-        ...state.notifications.slice(1, deletedIndex),
-        ...state.notifications.slice(deletedIndex + 1),
-      ];
+      const deletedIndex = state.notifications.findIndex(
+        notification => notification.id === deletedId,
+      );
+
+      if (deletedIndex !== -1) {
+        const updatedPosts = [
+          ...state.notifications.slice(0, deletedIndex),
+          ...state.notifications.slice(deletedIndex + 1),
+        ];
+
+        return {
+          ...state,
+          notifications: updatedPosts,
+        };
+      } else {
+        return state;
+      }
+
+    case 'MARK_ALL_AS_READ_SUCESS':
+      const updatedActionArray = action.array.map(notification => ({
+        ...notification,
+        isRead: true,
+      }));
+      const combinedArray = [...state.notifications, ...updatedActionArray];
+
+      const updatedNotificationsObject = combinedArray.reduce(
+        (acc, notification) => {
+          acc[notification.id] = notification;
+          return acc;
+        },
+        {},
+      );
+
+      const updatedNotifications = Object.values(updatedNotificationsObject);
+
+      console.log('fff', updatedNotifications);
 
       return {
         ...state,
-        notifications: updatedPosts,
+        notifications: updatedNotifications,
       };
 
     default:

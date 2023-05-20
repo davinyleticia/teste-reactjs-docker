@@ -13,7 +13,8 @@ export const fetchNotifications = async dispatch => {
       ...elem,
       date: GeradorData('all'),
       mes: GeradorData(),
-      dateString: GeradorData('string')
+      dateString: GeradorData('string'),
+      isRead: false,
     }));
 
     console.log(array);
@@ -32,6 +33,19 @@ export const deleteNofitication = async (id, dispatch) => {
     dispatch({
       type: 'DELETE_NOTIFICATIONS_SUCCESS',
       id: id,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+export const fetchIsRead = async (dispatch, array) => {
+
+  try {
+    dispatch({
+      type: 'MARK_ALL_AS_READ_SUCESS',
+      array: array,
     });
   } catch (error) {
     console.log(error);

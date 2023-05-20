@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const Fragment = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   text-align: start;
   padding: 0 !important;
 `;
