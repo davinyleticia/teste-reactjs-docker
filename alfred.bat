@@ -24,13 +24,13 @@ IF "%~1"=="--prod" (
 
     IF "%~2"=="--build" (
         echo Desconstruindo containers, caso existam...
-        docker-compose -f docker-compose-prod.yml down
+        docker-compose -f production.yml down
         echo Construindo containers de produção...
-        docker-compose -f docker-compose-prod.yml up -d --build
+        docker-compose -f production.yml up -d --build
     )
 
     IF "%~2"=="--up" (
         echo Iniciando containers de produção...
-        docker-compose -f docker-compose-prod.yml up -d
+        docker-compose -f production.yml up -d
     )
 )

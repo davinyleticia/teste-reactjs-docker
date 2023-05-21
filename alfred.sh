@@ -23,13 +23,13 @@ if [ "$1" = "--prod" ]; then
 
     if [ "$2" = "--build" ]; then
         echo "Desconstruindo containers, caso existam..."
-        docker-compose -f docker-compose-prod.yml down
+        docker-compose -f production.yml down
         echo "Construindo containers de produção..."
-        docker-compose -f docker-compose-prod.yml up -d --build
+        docker-compose -f production.yml up -d --build
     fi
 
     if [ "$2" = "--up" ]; then
         echo "Iniciando containers de produção..."
-        docker-compose -f docker-compose-prod.yml up -d
+        docker-compose -f production.yml up -d
     fi
 fi
