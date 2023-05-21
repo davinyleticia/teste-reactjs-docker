@@ -5,7 +5,6 @@ Ultilizamos um cmd para gerenciar os dois docker usamos um **ALFRED**
 - Windows com alfred.bat
 - Linux com alfred.sh
 
-# Rodar em Desenvolvimento:
 
 ## Requisitos:
 
@@ -13,6 +12,8 @@ Ultilizamos um cmd para gerenciar os dois docker usamos um **ALFRED**
 - docker-compose
 - cypress
 
+
+# Rodar em Desenvolvimento:
 ## Para dar os start no projeto:
 
 Exitem um CLI para ultilização dos dois ambiente:
