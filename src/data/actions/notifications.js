@@ -1,7 +1,6 @@
 import { get } from '../services/adapters/xhr';
 import { GeradorData } from '../ultils/getData';
 
-
 export const fetchNotifications = async dispatch => {
   dispatch({
     type: 'FETCH_NOTIFICATIONS',
@@ -16,8 +15,6 @@ export const fetchNotifications = async dispatch => {
       dateString: GeradorData('string'),
       isRead: false,
     }));
-
-    console.log(array);
 
     dispatch({
       type: 'FFETCH_NOTIFICATIONS_SUCESS',
@@ -39,9 +36,7 @@ export const deleteNofitication = async (id, dispatch) => {
   }
 };
 
-
 export const fetchIsRead = async (dispatch, array) => {
-
   try {
     dispatch({
       type: 'MARK_ALL_AS_READ_SUCESS',
