@@ -8,7 +8,7 @@ export const fetchNotifications = async dispatch => {
   try {
     const results = await get('https://dummyjson.com/posts');
 
-    let array = results?.data.posts?.map(elem => ({
+    let array = results?.data.posts?.map((elem) => ({
       ...elem,
       date: GeradorData('all'),
       mes: GeradorData(),

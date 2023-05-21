@@ -18,24 +18,21 @@ const Pagination = ({ totalPages, handleClick, currentPage }) => {
       </Page>
 
       {Array.from({ length: totalPages }, (_, index) => (
-        <>
-          <Page
-            key={index}
-            onClick={() => handleClick(index + 1)}
-            style={{
-              fontWeight: currentPage === index + 1 ? 'bold' : 'normal',
-              color:
-                currentPage === index + 1
-                  ? ' rgba(0, 0, 0, 0.87)'
-                  : 'rgba(0, 0, 0, 0.98)',
-              background:
-                currentPage === index + 1 ? 'rgba(0, 0, 0, 0.04)' : '',
-              borderRadius: '50%',
-            }}
-          >
-            {index + 1}
-          </Page>
-        </>
+        <Page
+          key={index}
+          onClick={() => handleClick(index + 1)}
+          style={{
+            fontWeight: currentPage === index + 1 ? 'bold' : 'normal',
+            color:
+              currentPage === index + 1
+                ? ' rgba(0, 0, 0, 0.87)'
+                : 'rgba(0, 0, 0, 0.98)',
+            background: currentPage === index + 1 ? 'rgba(0, 0, 0, 0.04)' : '',
+            borderRadius: '50%',
+          }}
+        >
+          {index + 1}
+        </Page>
       ))}
       <Page
         onClick={() =>

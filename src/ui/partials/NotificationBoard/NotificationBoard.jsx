@@ -35,26 +35,24 @@ function NotificationBoard() {
 
   useEffect(() => {
     fetchNotifications(dispatch);
-  }, [fetchNotifications, dispatch]);
+  }, [dispatch]);
 
   return (
     <React.Fragment>
       {api?.notifications?.length > 0 ? (
         <React.Fragment>
           <Cads>
-            {currentItems.map((elem, index) => (
-              <>
-                <NotificationsCard
-                  key={index}
-                  title={elem.title.substring(0, 10)}
-                  date={elem.date}
-                  description={elem.body}
-                  intro={elem.body.substring(0, 70)}
-                  id={elem.id}
-                  isActive={elem.mes > data ? true : null}
-                  dateString={elem.dateString}
-                />
-              </>
+            {currentItems.map((elem, key) => (
+              <NotificationsCard
+                key={key}
+                title={elem.title.substring(0, 10)}
+                date={elem.date}
+                description={elem.body}
+                intro={elem.body.substring(0, 70)}
+                id={elem.id}
+                isActive={elem.mes > data ? true : null}
+                dateString={elem.dateString}
+              />
             ))}
           </Cads>
           <Pagination
