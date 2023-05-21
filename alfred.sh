@@ -27,10 +27,12 @@ if [ "$1" = "--prod" ]; then
         docker-compose -f production.yml down
         echo "Construindo containers de produção..."
         docker-compose -f production.yml up -d --build --remove-orphans
+        echo "https://0.0.0.0"
     fi
 
     if [ "$2" = "--up" ]; then
         echo "Iniciando containers de produção..."
         docker-compose -f production.yml up -d --remove-orphans
+        echo "https://0.0.0.0"
     fi
 fi
