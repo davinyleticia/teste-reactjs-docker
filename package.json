@@ -7,6 +7,7 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "axios": "^1.4.0",
+    "cypress": "^12.12.0",
     "jest": "^27.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,8 +24,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
