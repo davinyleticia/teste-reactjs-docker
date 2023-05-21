@@ -1,5 +1,5 @@
-import React from 'react';
-import { stringData } from '../../../data/ultils/stringData';
+import React, { useContext } from 'react';
+import { contextModal } from '../../../data/contexts/useModal';
 import CloseIco from '../Ico/Close';
 import Messages from '../Messages/Messages';
 import NotMessages from '../NotMessages/NotMessages';
@@ -11,14 +11,8 @@ import {
   Fragment,
 } from './notifications.styled';
 
-function Notifications({
-  hanldenIsRead,
-  HanldenViewsAll,
-  dataNotifications,
-}) {
-
-
-  console.log("fff", dataNotifications)
+function Notifications({ hanldenIsRead, HanldenViewsAll, dataNotifications }) {
+  const [, handleSetIsModal] = useContext(contextModal);
 
   return (
     <Container>
@@ -26,14 +20,20 @@ function Notifications({
         <React.Fragment>
           <Fragment>
             {dataNotifications.map((notification, key) => (
-              <Messages key={key} title={notification.title} data={notification.dateString} />
+              <Messages
+                key={key}
+                notification={notification}
+                onClickModal={handleSetIsModal}
+              />
             ))}
             <DivisionLine />
             <ContentViewsAll>
               <BtnViewsAll onClick={HanldenViewsAll}>VER TODOS</BtnViewsAll>
             </ContentViewsAll>
           </Fragment>
-          <CloseIco setIsVisible={(bool) =>  hanldenIsRead(dataNotifications, bool)} />
+          <CloseIco
+            setIsVisible={bool => hanldenIsRead(dataNotifications, bool)}
+          />
         </React.Fragment>
       ) : (
         <Fragment>

@@ -19,8 +19,6 @@ function NotificationBoard() {
     fetchNotifications(dispatch);
   }, [fetchNotifications, dispatch]);
 
-  console.log(data);
-
   return (
     <React.Fragment>
       {api?.notifications?.length > 0 ? (

@@ -2,14 +2,26 @@ import React from 'react';
 import MessagesIco from '../Ico/Messages';
 import { Container, ContentInfo, Data, Title } from './messages.styled';
 
-
-function Messages({title, data}) {
+function Messages({ notification, onClickModal }) {
+  
   return (
     <Container>
       <MessagesIco />
       <ContentInfo>
-        <Title>{title}</Title>
-        <Data>{data}</Data>
+        <Title
+          onClick={() =>
+            onClickModal({
+              isModal: true,
+              id: notification.id,
+              title: notification.title,
+              date: notification.dateString,
+              description: notification.body,
+            })
+          }
+        >
+          {notification.title}
+        </Title>
+        <Data>{notification.date}</Data>
       </ContentInfo>
     </Container>
   );

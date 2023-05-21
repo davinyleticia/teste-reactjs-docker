@@ -12,7 +12,8 @@ export const Container = styled.div`
   position: absolute;
   right: 0;
   margin: 0 0.5rem;
-  z-index: 1000;
+  z-index: 100;
+  cursor: pointer;
 `;
 
 export const Fragment = styled.div`

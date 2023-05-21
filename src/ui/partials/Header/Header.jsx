@@ -57,7 +57,7 @@ function Header() {
 
   useEffect(() => {
     setDataNotifications(
-      api?.notifications?.filter(elem => elem.isRead === false).slice(0, 5),
+      api?.notifications?.filter(elem => elem.isRead === false).slice(0, 6),
     );
   }, [api]);
 
@@ -67,7 +67,6 @@ function Header() {
     );
   }, [api]);
   
-  console.log(allRead)
   return (
     <React.Fragment>
       <Container>

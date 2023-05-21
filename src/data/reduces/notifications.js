@@ -49,8 +49,6 @@ export const reducer = (state, action) => {
 
       const updatedNotifications = Object.values(updatedNotificationsObject);
 
-      console.log('fff', updatedNotifications);
-
       return {
         ...state,
         notifications: updatedNotifications,
