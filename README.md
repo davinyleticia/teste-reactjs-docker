@@ -14,9 +14,6 @@ Ultilizamos um cmd para gerenciar os dois docker usamos um **ALFRED**
 
 
 # Rodar em Desenvolvimento:
-## Para dar os start no projeto:
-
-Exitem um CLI para ultilização dos dois ambiente:
 
 > linux
 - Para iniciar o ambiente de desenvolvimento com build: `./alfred.sh --dev --build`
