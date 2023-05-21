@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started React App
 
 Ultilizamos um cmd para gerenciar os dois docker usamos um **ALFRED**
 
