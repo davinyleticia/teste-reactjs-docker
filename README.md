@@ -38,4 +38,5 @@ Exitem um CLI para ultilização dos dois ambiente:
 ## Credito:
 
  Daivny Letícia 
-    daviny@vidal.dev.br
+    - daviny@vidal.dev.br
+    - https://daviny.dev
