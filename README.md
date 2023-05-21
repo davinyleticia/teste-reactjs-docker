@@ -1,5 +1,8 @@
 # Getting Started React App
 
+
+![./captura.png](logo)
+
 Utilizamos um comando para gerenciar os dois dockers chamado **ALFRED**
 
 - No Windows, utilize o arquivo `alfred.bat`
