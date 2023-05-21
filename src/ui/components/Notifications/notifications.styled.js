@@ -13,7 +13,6 @@ export const Container = styled.div`
   right: 0;
   margin: 0 0.5rem;
   z-index: 100;
-  cursor: pointer;
 `;
 
 export const Fragment = styled.div`

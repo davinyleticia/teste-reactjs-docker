@@ -64,6 +64,7 @@ export const Description = styled.div``;
 
 export const Close = styled(CloseIco)`
   position: absolute;
+  cursor: pointer ;
 `;
 
 

@@ -18,10 +18,12 @@ export const Title = styled.span`
   font-weight: 700;
   padding-bottom: 0.3rem;
   padding: 0 !important;
+  cursor: pointer;
 `;
 
 export const Data = styled.span`
   color: rgba(0, 0, 0, 0.6);
   font-weight: 400;
   padding: 0 !important;
+  cursor: pointer;
 `;
