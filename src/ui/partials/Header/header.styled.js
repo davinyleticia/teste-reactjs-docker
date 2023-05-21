@@ -25,6 +25,9 @@ export const Info = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const Name = styled.span`
