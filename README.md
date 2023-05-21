@@ -33,6 +33,11 @@ Ultilizamos um cmd para gerenciar os dois docker usamos um **ALFRED**
 - Para iniciar o ambiente de desenvolvimento sem build: `alfred.bat --prod --up`
 
 
+## Cypress
+
+`npm run open`
+
+
 ## Credito:
 
  Daivny Letícia 
