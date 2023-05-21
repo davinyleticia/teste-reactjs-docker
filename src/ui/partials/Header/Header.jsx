@@ -25,7 +25,7 @@ function Header() {
 
   useEffect(() => {
     fetchNotifications(dispatch);
-  }, [fetchNotifications, dispatch]);
+  }, [dispatch]);
 
   const [isVisible, setIsVisible] = useState(false);
   const [dataNotifications, setDataNotifications] = useState([]);
@@ -52,7 +52,7 @@ function Header() {
     (array, bool) => {
       fetchIsRead(dispatch, array, bool);
     },
-    [fetchIsRead, dispatch],
+    [dispatch],
   );
 
   useEffect(() => {
