@@ -43,7 +43,7 @@ function Header() {
     }
   }, [isVisible]);
 
-  const HanldenViewsAll = useCallback(() => {
+  const handleViewsAll = useCallback(() => {
     setIsVisible(false);
     navigate('/notifications');
   }, [navigate]);
@@ -89,7 +89,7 @@ function Header() {
       {isVisible && (
         <Notifications
           hanldenIsRead={hanldenIsRead}
-          HanldenViewsAll={HanldenViewsAll}
+          handleViewsAll={handleViewsAll}
           dataNotifications={dataNotifications}
         />
       )}

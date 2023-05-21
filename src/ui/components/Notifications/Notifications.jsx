@@ -11,7 +11,7 @@ import {
   Fragment,
 } from './notifications.styled';
 
-function Notifications({ hanldenIsRead, HanldenViewsAll, dataNotifications }) {
+function Notifications({ hanldenIsRead, handleViewsAll, dataNotifications }) {
   const [, handleSetIsModal] = useContext(contextModal);
 
   return (
@@ -28,7 +28,7 @@ function Notifications({ hanldenIsRead, HanldenViewsAll, dataNotifications }) {
             ))}
             <DivisionLine />
             <ContentViewsAll>
-              <BtnViewsAll onClick={HanldenViewsAll}>VER TODOS</BtnViewsAll>
+              <BtnViewsAll onClick={handleViewsAll}>VER TODOS</BtnViewsAll>
             </ContentViewsAll>
           </Fragment>
           <CloseIco
