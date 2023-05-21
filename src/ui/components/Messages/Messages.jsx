@@ -31,7 +31,7 @@ function Messages({ notification, onClickModal }) {
             })
           }
         >
-          {notification.date}
+          {notification.dateString}
         </Data>
       </ContentInfo>
     </Container>
