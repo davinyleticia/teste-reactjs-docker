@@ -1,7 +1,7 @@
 # Getting Started React App
 
 
-![logo](./captura.png}
+![logo](./captura.png)
 
 Utilizamos um comando para gerenciar os dois dockers chamado **ALFRED**
 
