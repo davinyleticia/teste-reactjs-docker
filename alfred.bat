@@ -2,6 +2,8 @@
 
 echo Script Start da Proz Educação ^
 echo.
+echo Daviny - daviny@vidal.dev.br - https://daviny.dev\n ^
+echo.
 
 IF "%~1"=="--dev" (
     echo Iniciando ambiente de desenvolvimento...

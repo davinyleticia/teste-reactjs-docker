@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo -e "Script Start da Proz Educação\n"
+echo -e "Daviny - daviny@vidal.dev.br - https://daviny.dev\n"
 
 if [ "$1" = "--dev" ]; then
     echo "Iniciando ambiente de desenvolvimento..."
