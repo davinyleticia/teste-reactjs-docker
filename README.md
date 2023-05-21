@@ -1,45 +1,46 @@
 # Getting Started React App
 
-Ultilizamos um cmd para gerenciar os dois docker usamos um **ALFRED**
+Utilizamos um comando para gerenciar os dois dockers chamado **ALFRED**
 
-- Windows com alfred.bat
-- Linux com alfred.sh
-
+- No Windows, utilize o arquivo `alfred.bat`
+- No Linux, utilize o arquivo `alfred.sh`
 
 ## Requisitos:
 
 - Docker
 - docker-compose
-- cypress
-
+- Cypress
 
 # Rodar em Desenvolvimento:
 
-> linux
+**Linux**
 - Para iniciar o ambiente de desenvolvimento com build: `./alfred.sh --dev --build`
 - Para iniciar o ambiente de desenvolvimento sem build: `./alfred.sh --dev --up`
 
-> Windows
+**Windows**
 - Para iniciar o ambiente de desenvolvimento com build: `alfred.bat --dev --build`
 - Para iniciar o ambiente de desenvolvimento sem build: `alfred.bat --dev --up`
+
 # Rodar em produção
 
-> linux
-- Para iniciar o ambiente de desenvolvimento com build: `./alfred.sh --prod --build`
-- Para iniciar o ambiente de desenvolvimento sem build: `./alfred.sh --prod --up`
+**Linux**
+- Para iniciar o ambiente de produção com build: `./alfred.sh --prod --build`
+- Para iniciar o ambiente de produção sem build: `./alfred.sh --prod --up`
 
-> Windows
-- Para iniciar o ambiente de desenvolvimento com build: `alfred.bat --prod --build`
-- Para iniciar o ambiente de desenvolvimento sem build: `alfred.bat --prod --up`
-
+**Windows**
+- Para iniciar o ambiente de produção com build: `alfred.bat --prod --build`
+- Para iniciar o ambiente de produção sem build: `alfred.bat --prod --up`
 
 ## Cypress
 
-`npm run open`
+Execute o comando `npm run open` para iniciar o Cypress.
 
+## Observações:
 
-## Credito:
+O Nginx está configurado para usar a certificação na porta 443. Se desejar rodar na porta 80, basta descomentar a linha correspondente no arquivo `nginx.conf` e fazer outro build.
 
- Daivny Letícia 
-    - daviny@vidal.dev.br
-    - https://daviny.dev
+## Crédito:
+
+Daivny Letícia 
+- E-mail: daviny@vidal.dev.br
+- Website: [https://daviny.dev](https://daviny.dev)
