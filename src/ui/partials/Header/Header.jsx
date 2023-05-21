@@ -79,7 +79,7 @@ function Header() {
             isAlert={allRead}
             ShowNotifications={hanldenShowNotifications}
           />
-          <Avatar imgUrl="https://daviny.dev/images/logo.png" label="Avatar" />
+          <Avatar imgUrl="./avartar.svg" label="Avatar" />
           <Info>
             <Name>João da Silva</Name>
             <Proficiency>Professor</Proficiency>

@@ -1,7 +1,3 @@
-//https://daviny.dev/api/test-proz
-
-
-
 import React, { useReducer, createContext } from "react";
 import { reducer } from "../reduces/notifications";
 

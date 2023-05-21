@@ -4,6 +4,7 @@ import { contextModalExitMessages } from '../data/contexts/useModalExitMessages'
 import ModalExitMessages from '../ui/components/ModalExitMessages/ModalExitMessages';
 import ModalViewsNotifications from '../ui/components/ModalViewsNotifications/ModalViewsNotifications';
 import Header from '../ui/partials/Header/Header';
+import { Toast } from '../ui/styles/globalstyles';
 
 const Layout = ({ component }) => {
   const [modal] = useContext(contextModal);
@@ -11,8 +12,21 @@ const Layout = ({ component }) => {
 
   return (
     <>
-      {modal.isModal && <ModalViewsNotifications/> }
-      {modalExitMessages.isModal && <ModalExitMessages/> }
+
+      <Toast
+        position="top-center"
+        autoClose={900}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="dark"
+      />
+      {modal.isModal && <ModalViewsNotifications />}
+      {modalExitMessages.isModal && <ModalExitMessages />}
       <Header />
       <main>{component}</main>
     </>

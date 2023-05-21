@@ -12,7 +12,10 @@ export const Signal = styled.div`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  margin: .5rem;
+  margin: 0.5rem;
+  position: relative;
+  right: 8px;
+  top: -17px;
 `;
 
 export const SignalTransparent = styled.div`
@@ -20,5 +23,5 @@ export const SignalTransparent = styled.div`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  margin: .5rem;
+  margin: 0.5rem;
 `;

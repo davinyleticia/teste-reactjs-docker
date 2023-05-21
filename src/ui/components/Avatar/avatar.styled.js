@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.img`
   border-radius: 50%;
-  padding: 1rem;
+  margin: 1rem;
   background: #fff;
-  width: 30px;
-  height: 30px;
+  width: 70px;
+  height: 70px;
   
 `;
 

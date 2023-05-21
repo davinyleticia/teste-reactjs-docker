@@ -1,4 +1,5 @@
-import React, { useCallback, useContext, useEffect } from 'react';
+import React, { useCallback, useContext } from 'react';
+import useNotifySuccess from '../../../data/hooks/UseNotify';
 import { deleteNofitication } from '../../../data/actions/notifications';
 import { contextAPI } from '../../../data/contexts/useApiNotifications';
 import { contextModalExitMessages } from '../../../data/contexts/useModalExitMessages';
@@ -13,27 +14,25 @@ import {
   Title,
 } from './ModalExitMessages.styled';
 
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const notify = () =>
-  toast.success('Success Notification !', {
-    position: toast.POSITION.TOP_CENTER,
-  });
-
-  
 function ModalExitMessages() {
+  const notifySuccess = useNotifySuccess();
   const [modalExitMessages, handleSetModalExitMessages] = useContext(
     contextModalExitMessages,
   );
   const [api, dispatch] = useContext(contextAPI);
 
   const handleExitMessages = useCallback(() => {
-    notify();
+    notifySuccess('Mensagem excluída', {
+      toastClassName: 'custom-toast',
+      bodyClassName: 'custom-toast-body',
+    });
+
     deleteNofitication(modalExitMessages.id, dispatch);
 
     handleSetModalExitMessages({ isModal: false });
-  }, [dispatch, deleteNofitication, handleSetModalExitMessages]);
+  }, [dispatch, deleteNofitication, handleSetModalExitMessages, notifySuccess]);
 
   return (
     <Blackrop>
