@@ -18,10 +18,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ModalExitMessages() {
   const notifySuccess = useNotifySuccess();
-  const [modalExitMessages, handleSetModalExitMessages] = useContext(
+  const [, handleSetModalExitMessages] = useContext(
     contextModalExitMessages,
   );
-  const [api, dispatch] = useContext(contextAPI);
+  const [, dispatch] = useContext(contextAPI);
 
   const handleExitMessages = useCallback(() => {
     notifySuccess('Mensagem excluída', {
