@@ -32,7 +32,7 @@ function ModalExitMessages() {
     deleteNofitication(dispatch);
 
     handleSetModalExitMessages({ isModal: false });
-  }, [dispatch, deleteNofitication, handleSetModalExitMessages, notifySuccess]);
+  }, [dispatch, handleSetModalExitMessages, notifySuccess]);
 
   return (
     <Blackrop>
