@@ -45,7 +45,7 @@ function Header() {
 
   const handleViewsAll = useCallback(() => {
     setIsVisible(false);
-    navigate('/notifications');
+    navigate('./');
   }, [navigate]);
 
   const hanldenIsRead = useCallback(

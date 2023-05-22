@@ -14,7 +14,7 @@ const RouterViews = () => {
           }
         />
                 <Route
-          path="/notifications"
+          path="/"
           element={
               <Layout component={<Home/>} />
           }
