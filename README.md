@@ -42,6 +42,9 @@ Execute o comando `npm run open` para iniciar o Cypress.
 
 O Nginx está configurado para usar a certificação na porta 443. Se desejar rodar na porta 80, basta descomentar a linha correspondente no arquivo `nginx.conf` e fazer outro build.
 
+## Demo
+
+- Website [https://teste-proz.daviny.dev/](https://teste-proz.daviny.dev/)
 ## Crédito:
 
 Daivny Vidal 
