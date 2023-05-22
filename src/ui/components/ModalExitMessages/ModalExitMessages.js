@@ -18,7 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ModalExitMessages() {
   const notifySuccess = useNotifySuccess();
-  const [, handleSetModalExitMessages] = useContext(
+  const [modalExitMessages, handleSetModalExitMessages] = useContext(
     contextModalExitMessages,
   );
   const [, dispatch] = useContext(contextAPI);
@@ -29,10 +29,10 @@ function ModalExitMessages() {
       bodyClassName: 'custom-toast-body',
     });
 
-    deleteNofitication(dispatch);
+    deleteNofitication(modalExitMessages.id, dispatch);
 
     handleSetModalExitMessages({ isModal: false });
-  }, [dispatch, handleSetModalExitMessages, notifySuccess]);
+  }, [dispatch, handleSetModalExitMessages,modalExitMessages, notifySuccess,]);
 
   return (
     <Blackrop>
