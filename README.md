@@ -3,7 +3,7 @@
 
 ![logo](./captura.png)
 
-Utilizamos um comando para gerenciar os dois dockers chamado **ALFRED**
+Utilizamos um CLI para gerenciar os dois dockers chamado **ALFRED**
 
 - No Windows, utilize o arquivo `alfred.bat`
 - No Linux, utilize o arquivo `alfred.sh`
