@@ -29,7 +29,7 @@ function ModalExitMessages() {
       bodyClassName: 'custom-toast-body',
     });
 
-    deleteNofitication(modalExitMessages.id, dispatch);
+    deleteNofitication(modalExitMessages, dispatch);
 
     handleSetModalExitMessages({ isModal: false });
   }, [dispatch, deleteNofitication, handleSetModalExitMessages, notifySuccess]);
