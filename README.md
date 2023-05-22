@@ -44,6 +44,6 @@ O Nginx está configurado para usar a certificação na porta 443. Se desejar ro
 
 ## Crédito:
 
-Daivny Letícia 
+Daivny Vidal 
 - E-mail: daviny@vidal.dev.br
 - Website: [https://daviny.dev](https://daviny.dev)
