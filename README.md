@@ -1,7 +1,7 @@
 # Getting Started React App
 
 
-![logo](./captura.png)
+![logo](https://raw.githubusercontent.com/davinyleticia/teste-reactjs-docker/refs/heads/master/captura.png)
 
 Utilizamos um CLI para gerenciar os dois dockers chamado **ALFRED**
 
@@ -42,11 +42,7 @@ Execute o comando `npm run open` para iniciar o Cypress.
 
 O Nginx está configurado para usar a certificação na porta 443. Se desejar rodar na porta 80, basta descomentar a linha correspondente no arquivo `nginx.conf` e fazer outro build.
 
-## Demo
-
-- Website [https://teste-proz.daviny.dev/](https://teste-proz.daviny.dev/)
 ## Crédito:
 
 Daivny Vidal 
-- E-mail: daviny@vidal.dev.br
 - Website: [https://daviny.dev](https://daviny.dev)
